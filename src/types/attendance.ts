@@ -26,3 +26,21 @@ export interface AiAttendanceResponse {
     message: string;
     attendanceRecord: AttendanceRecordResponse | null;
 }
+
+export interface AttendanceSummaryResponse {
+    sessionId: number;
+    classSection: string;
+    subjectName: string;
+    totalStudents: number;
+    presentCount: number;
+    lateCount: number;
+    absentCount: number;
+    excusedCount?: number;
+    records: AttendanceRecordResponse[];
+}
+
+export interface AttendanceCorrectionRequest {
+    status: AttendanceStatus;
+    correctedBy: string;
+    correctionReason: string;
+}
